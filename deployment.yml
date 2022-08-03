@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stakaterimage
+  labels:
+    app: stakaterimage
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: stakaterimage
+    spec:
+      containers:
+      - image: stakaterimage:v1
+        name: stakaterimage
+        ports:
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}
